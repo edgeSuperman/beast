@@ -1,0 +1,14 @@
+<ol class="breadcrumb">
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/svn">服务单元</a></li>
+</ol>
+
+<div class="list-group">
+    <div class="list-group" ng-repeat="item in list">
+        <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">{{item.svn_path}}
+            </h4>
+            <p class="list-group-item-text">{{item.desc}}</p>
+        </a>
+    </div>
+</div>
