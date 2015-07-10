@@ -9,12 +9,12 @@ function SvnList($scope, $http, $location) {
                 {
                     "tag_id": 0,
                     "tag_name": "odp_cater",
-                    "deploy_path": "/home/map"
+                    "deploy_path": "/home/map/odp_cater/"
                 },
                 {
                     "tag_id": 0,
                     "tag_name": "odp_goods",
-                    "deploy_path": ""
+                    "deploy_path": "/home/map/odp_goods/"
                 }
             ]
         },
@@ -26,12 +26,12 @@ function SvnList($scope, $http, $location) {
                 {
                     "tag_id": 0,
                     "tag_name": "odp_cater",
-                    "deploy_path": ""
+                    "deploy_path": "/home/map/odp_cater/"
                 },
                 {
                     "tag_id": 0,
                     "tag_name": "odp_goods",
-                    "deploy_path": ""
+                    "deploy_path": "/home/map/odp_goods/"
                 }
             ]
         },
@@ -43,7 +43,7 @@ function SvnList($scope, $http, $location) {
                 {
                     "tag_id": 0,
                     "tag_name": "odp_cater",
-                    "deploy_path": ""
+                    "deploy_path": "/home/map/odp_cater/"
                 }
             ]
         }

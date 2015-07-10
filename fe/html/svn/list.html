@@ -7,6 +7,7 @@
     <div class="list-group" ng-repeat="item in list">
         <a href="#" class="list-group-item">
             <h4 class="list-group-item-heading">{{item.svn_path}}
+                <span class="label label-success pull-right tag-service" ng-repeat="tag in item.service_tags"  title="{{tag.deploy_path}}">{{tag.tag_name}}</span>
             </h4>
             <p class="list-group-item-text">{{item.desc}}</p>
         </a>
