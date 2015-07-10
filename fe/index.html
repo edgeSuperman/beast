@@ -5,8 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/beast.jpg">
-    <link rel="stylesheet" href="lib/bootstrap.min.css"/>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/beast.css"/>
+
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <script src="./lib/angular.min.js"></script>
     <script src="./lib/angular.ngRoute.js"></script>
@@ -27,14 +36,23 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="#/">BEAST</a>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#/">服务tag <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">服务单元</a></li>
+                <li class="active"><a href="#/">服务树 <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">机器管理</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">服务单元<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/svn/add">添加服务单元</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#/svn/list">服务单元列表</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
     <div class="main">
-    <div ng-view></div>
+    <div ng-view>
+
+    </div>
     </div>
     <footer>
         <div class="site-info">
@@ -54,12 +72,18 @@
     app.config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider.
-                    when('/', {
+                    when('/svn/add', {
                         templateUrl: './html/svn/add.html',
                         controller: 'SvnAdd'
-                    }).when('/svn', {
+                    }).when('/', {
+                        templateUrl: './html/index.html',
+                        controller: 'SvnList'
+                    }).when('/svn/list', {
                         templateUrl: './html/svn/list.html',
                         controller: 'SvnList'
+                    }).when('/svn/update/:id', {
+                        templateUrl: './html/svn/add.html',
+                        controller: 'SvnAdd'
                     }).when('/add/:href', {
                         templateUrl: 'html/add.html',
                         controller: 'Add'

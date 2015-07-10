@@ -1,7 +1,7 @@
 <ol class="breadcrumb">
     <li><a href="#/">Home</a></li>
-    <li><a href="#/svn">服务单元</a></li>
-    <li class="active">添加</li>
+    <li><a href="#/svn/list">服务单元</a></li>
+    <li class="active">{{isUpdate? "更新":"新建"}}</li>
 </ol>
 <form name="typeForm">
     <div class="form-group">
@@ -14,14 +14,14 @@
     </div>
     <hr/>
     <div class="form-group clearfix">
-        <h4>tag关联</h4>
+        <h4>服务tag关联</h4>
         <select class="pull-left" ng-model="tag_selected" ng-options="o.tag_id as o.tag_name for o in service_tags">
             <option value="">请选择</option>
         </select>
 
 
         <input ng-model="tag_deploy" type="text" style="width: 70%;margin-left: 10px;" class="form-control pull-left input-group-sm"/>
-        <button ng-click="relate()" type="button" class="btn btn-default" style="margin-left: 10px;">添加关联</button>
+        <button ng-click="relate()" type="button" class="btn btn-success" style="margin-left: 10px;">添加关联</button>
 
         <hr ng-show="relatedTags.length > 0" />
         <h4 ng-show="relatedTags.length > 0">关联列表</h4>
@@ -35,12 +35,12 @@
 
                 <input type="text" style="width: 70%;margin-left: 10px;" ng-model="item.deploy_path" class="form-control pull-left input-group-sm"/>
 
-                <button ng-click="deleteRelate(item)" type="button" class="btn btn-default" style="margin-left: 10px;">删除</button>
+                <button ng-click="deleteRelate(item)" type="button" class="btn btn-danger" style="margin-left: 10px;">删除</button>
             </li>
         </ul>
 
     </div>
 
     <hr/>
-    <button ng-click="submit()" type="submit" class="btn btn-default">提交</button>
+    <button ng-click="submit()" type="submit" class="btn btn-lg btn-primary">提交</button>
 </form>
